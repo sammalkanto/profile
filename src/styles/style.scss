@@ -1,0 +1,105 @@
+@import 'config.scss';
+
+body {
+    height: 100vh;
+    background: $darkCyan;
+    overflow: hidden;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $darkCyan;
+}
+
+.card {
+    $card-border-radius: 16px;
+    $card-width: 320px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.3);
+    border-radius: $card-border-radius;
+    position: relative;
+    width: $card-width;
+    background: white;
+
+    .background {
+        border-radius: $card-border-radius $card-border-radius 0 0;
+    }
+
+    .avatar {
+        $avatar-size: 96px;
+        $avatar-border-width: 5px;
+        position: absolute;
+        width: $avatar-size;
+        border-radius: 100%;
+        border:  $avatar-border-width solid white;
+        left: calc($card-width/2 - $avatar-size/2);
+        top: calc(140px - $avatar-size/2 - $avatar-border-width*2);
+    }
+
+    .content {
+        padding: 64px 48px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+
+            .personal {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                font-weight: 700;
+    
+                .age {
+                    color: $darkGray;
+                }
+            }
+    
+            .location {
+                color: $darkGray;
+            }
+        }
+
+        .divider {
+            border-top: 1px solid rgba($darkGray, 0.4);
+            width: calc(100% + 96px);
+        }
+
+        .infos {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+
+                .value {
+                    font-weight: 700;
+                }
+
+                .key {
+                    color: $darkGray;
+                    font-size: 0.8rem;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+}
+
+@import 'media.scss';
